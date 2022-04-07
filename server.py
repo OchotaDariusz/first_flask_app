@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -8,5 +8,10 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/note', methods=['GET', 'POST'])
+def handle_notes():
+    pass
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
