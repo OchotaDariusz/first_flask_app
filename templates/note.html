@@ -9,9 +9,9 @@
 </head>
 <body>
 <div>
+    <h2>Notes:</h2>
+    <br>
     {% if notes %}
-        <h2>Notes:</h2>
-        <br>
         <ol>
             {% for item in notes %}
                 <li>{{ item }}</li>
@@ -33,7 +33,7 @@
               placeholder="Enter your note here...">{{ request.form['content'] }}</textarea>
     <br>
     {% if bad_note %}
-    <p class="bad-note">You cannot add empty note!</p>
+        <p class="bad-note">You cannot add empty note!</p>
     {% endif %}
     <form action="{{ url_for('handle_notes') }}" method="post" id="note-form">
         <input type="submit" class="btn btn-primary" value="Add">

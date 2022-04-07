@@ -10,11 +10,10 @@ div {
 div ol {
     display: inline-block;
     margin: auto;
-    text-align: center;
 }
 
 div ol li {
-    text-align: justify;
+    text-align: center;
 }
 
 h2 {
