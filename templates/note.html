@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <title>Cool Note</title>
+    <title>Notes</title>
 </head>
 <body>
 <div>
-    <p>Hello Codecooler!</p>
-</div>
-<div>
     {% if notes %}
-        <p>Here are your notes:</p>
+        <p>Notes:</p>
         <ol>
             {% for item in notes %}
                 <li>{{ item }}</li>
@@ -20,6 +17,13 @@
     {% else %}
         <p>There are no notes!</p>
     {% endif %}
+</div>
+<div>
+    <textarea rows="4" cols="50" name="note" form="note-form">Enter your note here...</textarea>
+    <br>
+    <form method="post" id="note-form">
+        <input type="submit">
+    </form>
 </div>
 </body>
 </html>
