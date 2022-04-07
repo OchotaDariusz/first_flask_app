@@ -14,10 +14,10 @@ def handle_notes():
     if request.method == 'POST':
         note = request.form['content']
         if not note:
-            return render_template('note.html', notes=notes, bad_note=True)
+            return render_template('note.html', notes=notes, counter=len(notes), bad_note=True)
         else:
             notes.append(note)
-    return render_template('note.html', notes=notes)
+    return render_template('note.html', notes=notes, counter=len(notes))
 
 
 if __name__ == '__main__':
