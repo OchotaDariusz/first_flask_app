@@ -35,12 +35,14 @@
     {% if bad_note %}
         <p class="bad-note">You cannot add empty note!</p>
     {% endif %}
+    <br>
     <form action="{{ url_for('handle_notes') }}" method="post" id="note-form">
         <input type="submit" class="btn btn-primary" value="Add">
         <a href="{{ url_for('edit_notes') }}" class="btn btn-secondary">Edit</a>
-        <br>
-        <a href="{{ url_for('index') }}" class="btn btn-link">Back to home</a>
+        <a href="{{ url_for('delete_notes') }}" class="btn btn-danger">Delete</a>
     </form>
+    <br><br>
+    <a href="{{ url_for('index') }}" class="btn btn-link">Back to home</a>
 </div>
 <div>
     <small>Amount of notes: {{ counter }}</small>

@@ -21,6 +21,10 @@ h2 {
     color: chocolate;
 }
 
+form {
+    display: inline;
+}
+
 .bad-note {
     font-size: small;
     color: red;

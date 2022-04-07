@@ -22,12 +22,23 @@ def handle_notes():
 
 @app.route('/note/edit', methods=('GET', 'POST'))
 def edit_notes():
+    indexes = range(len(notes))
     if request.method == 'POST':
         index = request.form['indexes']
         note = request.form['content']
+        if not note:
+            return render_template('edit.html', notes=notes, indexes=indexes, bad_note=True)
         notes[int(index)] = note
-    indexes = range(len(notes))
     return render_template('edit.html', notes=notes, indexes=indexes)
+
+
+@app.route('/note/delete', methods=('GET', 'POST'))
+def delete_notes():
+    if request.method == 'POST':
+        index = request.form['indexes']
+        notes.pop(int(index))
+    indexes = range(len(notes))
+    return render_template('delete.html', notes=notes, indexes=indexes)
 
 
 if __name__ == '__main__':
