@@ -21,3 +21,8 @@ h2 {
     font-weight: bold;
     color: chocolate;
 }
+
+.bad-note {
+    font-size: small;
+    color: red;
+}
