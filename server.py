@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-notes = ['first note', 'second']
+notes = []
 
 @app.route('/')
 def index():
