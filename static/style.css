@@ -1,3 +1,23 @@
 body {
     color: chocolate;
 }
+
+div {
+    margin: auto;
+    text-align: center;
+}
+
+div ol {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+
+div ol li {
+    text-align: justify;
+}
+
+h2 {
+    font-weight: bold;
+    color: chocolate;
+}
