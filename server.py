@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
+
 notes = ['first note', 'second']
 
 @app.route('/')
@@ -11,9 +12,12 @@ def index():
 @app.route('/note', methods=['GET', 'POST'])
 def handle_notes():
     if request.method == 'POST':
-        pass
-    else:
-        return render_template('note.html', notes=notes)
+        note = request.form['content']
+        if not note:
+            return render_template('note.html', notes=notes, bad_note=True)
+        else:
+            notes.append(note)
+    return render_template('note.html', notes=notes)
 
 
 if __name__ == '__main__':
